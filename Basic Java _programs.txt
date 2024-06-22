@@ -1,0 +1,132 @@
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 1️⃣: 𝐒𝐰𝐚𝐩 2 𝐍𝐮𝐦𝐛𝐞𝐫𝐬
+
+public class SwapNumberExample {
+public static void main(String[] args) {
+int a = 5, b = 10;
+System.out.println("Before swap: a = " + a + ", b = " + b);
+a = a + b - (b = a);
+System.out.println("After swap: a = " + a + ", b = " + b);
+}
+}
+
+𝐎𝐮𝐭𝐩𝐮𝐭: 
+Before swap: a = 5, b = 10
+After swap: a = 10, b = 5
+-----------------------------------------------------------------------------
+
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 2️⃣: 𝐑𝐞𝐯𝐞𝐫𝐬𝐞 𝐚 𝐧𝐮𝐦𝐛𝐞𝐫
+
+public class ReverseNumber {
+public static void main(String[] args) {
+int number = 12345, reversed = 0;
+System.out.println("Original number: " + number);
+for (; number != 0; number /= 10) reversed = reversed * 10 + number % 10;
+System.out.println("Reversed number: " + reversed);
+}
+}
+
+𝐎𝐮𝐭𝐩𝐮𝐭:
+Original number: 12345
+Reversed number: 54321
+-----------------------------------------------------------------------------
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 3️⃣: 𝐑𝐞𝐯𝐞𝐫𝐬𝐞 𝐚 𝐬𝐭𝐫𝐢𝐧𝐠
+
+public class ReverseString {
+public static void main(String[] args) {
+String original = "Hello World";
+String reversed = new StringBuilder(original).reverse().toString();
+System.out.println("Original string: " + original);
+System.out.println("Reversed string: " + reversed);
+}
+}
+
+𝐎𝐮𝐭𝐩𝐮𝐭:
+Original string: Hello World
+Reversed string: dlroW olleH
+-----------------------------------------------------------------------------
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 4️⃣: 𝐏𝐚𝐥𝐢𝐧𝐝𝐫𝐨𝐦𝐞 𝐧𝐮𝐦𝐛𝐞𝐫
+
+public class PalindromeNumber {
+public static void main(String[] args) {
+int number = 12321;
+boolean isPalindrome = (number == Integer.parseInt(new StringBuilder(String.valueOf(number)).reverse().toString()));
+System.out.println("Is " + number + " a palindrome? " + isPalindrome);
+}
+}
+
+𝐎𝐮𝐭𝐩𝐮𝐭: 
+Is 12321 a palindrome? true
+-----------------------------------------------------------------------------
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 5️⃣: 𝐩𝐚𝐥𝐢𝐧𝐝𝐫𝐨𝐦𝐞 𝐬𝐭𝐫𝐢𝐧𝐠
+
+public class PalindromeString {
+public static void main(String[] args) {
+String original = "madam";
+boolean isPalindrome = original.equals(new StringBuilder(original).reverse().toString());
+System.out.println("Is \"" + original + "\" a palindrome? " + isPalindrome);
+}
+}
+
+𝐎𝐮𝐭𝐩𝐮𝐭:
+Is "madam" a palindrome? true
+
+𝐏𝐫𝐨𝐠𝐫𝐚𝐦 6: SecondHighestNumber
+ public class secondLargestNumber {
+    public static void main(String[] args) {
+        int[] numbers = {2, 5, 10, 12, 15, 17, 19, 21, 89, 45};
+
+// Initialize variables to track largest and second largest elements
+int largest = Integer.MIN_VALUE;
+int secondLargest = Integer.MIN_VALUE;
+
+// Iterate through the array
+for (int num : numbers) {
+  // Update largest and second largest if necessary
+  if (num > largest) {
+    secondLargest = largest;
+    largest = num;
+  } else if (num > secondLargest && num != largest) {
+    secondLargest = num;
+  }
+}
+
+// Print the second largest element (or indicate no second largest exists)
+if (secondLargest == Integer.MIN_VALUE) {
+  System.out.println("No second largest element (all elements are equal or array has less than two elements)");
+} else {
+  System.out.println("The second largest number is: " + secondLargest);
+   }
+}}
+Program 7:
+import java.util.Arrays;
+public class ArraySort {
+    public static void main(String[] args) {
+        int[] numbers = {2, 5, 10, 12, 15, 17, 19, 21, 89, 45};
+
+                // Print the original array
+                System.out.println("Original array: " + Arrays.toString(numbers));
+
+                // Sort the array in ascending order
+                Arrays.sort(numbers);
+
+                // Print the sorted array
+                System.out.println("Sorted array: " + Arrays.toString(numbers));
+            }
+        }
+Program 8: FIBONNACISERIES PROGRAM
+class FibonacciSeries {
+  public static void main(String[] args) {
+
+    int n = 15, t1 = 0, t2 = 1;
+    System.out.println("Fibonacci Series of " + n + " terms:");
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(t1 + ", ");
+
+      // compute the next term
+      int sum = t1 + t2;
+      t1 = t2;
+      t2 = sum;
+    }
+  }
+}
